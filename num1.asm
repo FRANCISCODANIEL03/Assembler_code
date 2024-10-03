@@ -15,7 +15,7 @@ main proc
 mov ax, SEG @data
 mov ds,ax
 
-mov ah,09
+mov ah,09h
 lea dx,mensaje 
 int 21h
 
