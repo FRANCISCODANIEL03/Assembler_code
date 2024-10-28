@@ -55,3 +55,8 @@ ciclo1:
     dec SI
     jmp ciclo1
     
+fuera_ciclo:
+    mov ax, 4c00h
+    int 21h
+    
+end inicio
