@@ -21,3 +21,20 @@ inicio:
     int 21h
     
     mov SI, 0
+
+ciclo:
+    mov dl, msg[SI]
+    cmp DL, 24h
+    je ciclo1
+    
+    mov ah, 02
+    mov dl, dl
+    int 21h
+    
+    mov ah, 02
+    mov dl, 0Ah
+    int 21h
+    
+    inc SI
+    jmp ciclo
+
