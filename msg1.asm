@@ -38,3 +38,20 @@ ciclo:
     inc SI
     jmp ciclo
 
+ciclo1:
+    
+    mov dl, msg[SI]
+    cmp DL, 0
+    je fuera_ciclo
+    
+    mov ah, 02
+    mov dl, dl
+    int 21h
+    
+    mov ah, 02
+    mov dl, 0Ah
+    int 21h
+    
+    dec SI
+    jmp ciclo1
+    
