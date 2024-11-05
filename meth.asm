@@ -134,6 +134,36 @@ suma_resta_mult_div_mod proc
     
     ret
 suma_resta_mult_div_mod endp
+    
+read_number proc
+    xor ax, ax        ; Limpiar AX
+    xor cx, cx        ; Limpiar CX (contador)
 
+    ; Leer primer digito
+    mov ah, 01h
+    int 21h
+    cmp al, 13        ; Verificar si es Enter
+    je read_done
+    sub al, '0'       ; Convertir de ASCII a numero
+    mov bl, al        ; Guardar primer digito en BL
+
+    ; Leer segundo d?gito
+    mov ah, 01h
+    int 21h
+    cmp al, 13        ; Verificar si es Enter
+    je read_done
+    sub al, '0'       ; Convertir de ASCII a numero
+    mov bh, al        ; Guardar segundo digito en BH
+
+    ; Combinar los dos digitos en AL
+    mov al, bl
+    ; Multiplicar BL por 10 y sumar BH
+    mov cx, 10
+    mul cx            ; AL = AL * 10 (primer digito)
+    add al, bh        ; AL = AL + segundo digito
+read_done:
+    ret
+read_number endp
+ 
 main endp
 end main
