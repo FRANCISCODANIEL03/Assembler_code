@@ -13,7 +13,6 @@ MAIN :
     MOV AX, SEG @data          ; Cargar el segmento de datos
     MOV DS, AX                   ; Inicializar el segmento de datos en DS
 
-
     ; Comparar las edades-
     MOV AL, edad1                ; Mover edad1 a AL
     MOV BL, edad2                ; Mover edad2 a BL
