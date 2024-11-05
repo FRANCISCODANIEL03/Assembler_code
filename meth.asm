@@ -164,6 +164,36 @@ read_number proc
 read_done:
     ret
 read_number endp
- 
+
+; Funcion para imprimir un numero en AL
+print_number proc
+    ; Convertir AL a ASCII
+    xor ah, ah        ; Limpiar AH para la conversion
+    mov cx, 10        ; Divisor para obtener digitos
+    xor dx, dx        ; Limpiar DX
+
+    ; Convertir numero a ASCII
+    push ax           ; Guardar AX en la pila
+    mov bx, 10        ; Guardar 10 en BX para la conversion
+    xor cx, cx        ; Limpiar CX (contador de d?gitos)
+
+convert_loop:
+    xor dx, dx        ; Limpiar DX
+    div bx             ; AX = AX / 10, DX = AX % 10
+    push dx           ; Guardar el resto (digito)
+    inc cx            ; Incrementar el contador de digitos
+    test ax, ax       ; Probar si AX es cero
+    jnz convert_loop   ; Si no es cero, continuar
+
+print_loop:
+    pop dx            ; Recuperar el digito
+    add dl, '0'       ; Convertir a ASCII
+    mov ah, 02h       ; Funci?n para mostrar un caracter
+    int 21h           ; Imprimir el caracter
+    loop print_loop    ; Repetir para todos los digitos
+
+    pop ax            ; Recuperar AX
+    ret
+print_number endp 
 main endp
 end main
