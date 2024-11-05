@@ -1,5 +1,5 @@
 .model small
-.stack 64
+.stack
 
 .data  ; Segmento de datos
 
@@ -15,7 +15,7 @@ mensaje4 db 10, 13, "La resta es: $"
 saltoLinea db 10, 13, "$"
 
 .code  ; Segmento de c?digo
-begin:
+main proc
     ; Inicializar segmento de datos
     mov ax, @data
     mov ds, ax
@@ -80,5 +80,5 @@ begin:
     ; Finalizar el programa
     mov ax, 4c00h
     int 21h
-
-end begin
+main endp
+end main
