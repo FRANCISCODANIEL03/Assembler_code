@@ -2,6 +2,7 @@
 .stack 100h
 
 .data
+
     msg db 'Numeros del 1 al 99: $'
     new_line db ' - $'  ; Nueva l?nea
 
