@@ -16,23 +16,23 @@ Pila Ends
 
 Codigo Segment 
 
-        holam3 proc far
+holam3 proc far
         
-        Assume CS:Codigo,DS:Datos,SS:Pila
+    Assume CS:Codigo,DS:Datos,SS:Pila
         
-        mov ax,Datos ;ax=direccion del segmento de datos
+    mov ax,Datos ;ax=direccion del segmento de datos
         
-        mov ds,ax ;ds=ax indicar el segmento de datos
+    mov ds,ax ;ds=ax indicar el segmento de datos
         
-        lea dx,Mensaje ;ds:dx=direccion del mensaje
+    lea dx,Mensaje ;ds:dx=direccion del mensaje
         
-        call Escribe ;Llamar al rpocedimiento Escribe
+    call Escribe ;Llamar al rpocedimiento Escribe
         
-        mov ax,4c00h ;funcion para terminal el programa
+    mov ax,4c00h ;funcion para terminal el programa
         
-        int 21h ;volver al DOS
+    int 21h ;volver al DOS
         
-        holam3 endp
+holam3 endp
         
 Escribe proc ;inicio procedimiento Escribe
 
