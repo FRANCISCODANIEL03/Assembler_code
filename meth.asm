@@ -49,6 +49,91 @@ main proc
     int 21h
     ret
     
-  
+suma_resta_mult_div_mod proc
+
+ ; Leer el primer numero
+    mov ah, 09h
+    lea dx, mensaje1
+    int 21h
+    call read_number
+    mov numero1, al   ; Almacenar el primer numero
+
+    ; Leer el segundo numero
+    mov ah, 09h
+    lea dx, mensaje2
+    int 21h
+    call read_number
+    mov numero2, al   ; Almacenar el segundo numero
+
+    ; Calcular la suma
+    mov al, numero1
+    add al, numero2
+    mov suma, al
+
+    ; Calcular la resta
+    mov al, numero1
+    sub al, numero2
+    mov resta, al
+    
+    ; Multiplicacion
+    mov al, numero1
+    mov bl, numero2   ; Mover numero2 a BL
+    mul bl            ; Multiplicar AL por BL
+    mov mult, al      ; Almacenar el resultado de la multiplicacion
+
+    ; Division
+    mov al, numero1
+    mov bl, numero2   ; Mover numero2 a BL
+    xor ah, ah        ; Limpiar AH para la division
+    cmp bl, 0        ; Comprobar si el divisor es cero
+    je div_error      ; Si es cero, ir a div_error
+    div bl            ; Dividir AL por BL
+    mov divi, al      ; Almacenar el cociente
+    
+    ; Modulo
+    mov al, numero1
+    mov bl, numero2   ; Mover numero2 a BL
+    xor ah, ah        ; Limpiar AH para la division
+    div bl            ; Dividir AL por BL
+    mov modu, ah      ; Almacenar el residuo (modulo) 
+
+    ; Mostrar la suma
+    mov ah, 09h
+    lea dx, mensaje3
+    int 21h
+    mov al, suma
+    call print_number
+
+    ; Mostrar la resta
+    mov ah, 09h
+    lea dx, mensaje4
+    int 21h
+    mov al, resta
+    call print_number
+      
+    ; Mostrar la multiplicacion
+    mov ah, 09h
+    lea dx, mensaje5
+    int 21h
+    mov al, mult
+    call print_number
+    
+    ; Mostrar la division
+    mov ah, 09h
+    lea dx, mensaje6
+    int 21h
+    mov al, divi
+    call print_number
+    
+    ; Mostrar el modulo
+    mov ah, 09h
+    lea dx, mensaje7
+    int 21h
+    mov al, modu
+    call print_number
+    
+    ret
+suma_resta_mult_div_mod endp
+
 main endp
 end main
