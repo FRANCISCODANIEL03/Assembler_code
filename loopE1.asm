@@ -2,6 +2,7 @@
 .stack 100h       ; Definir el tama?o de la pila
 
 .data
+
     msg db 13,10,'Numero: $'  ; Mensaje a imprimir
 
 .code
