@@ -58,3 +58,33 @@ suma_resta macro num1,num2
     int 21h
       
 endm
+
+.model small
+.stack
+
+.data  ; Segmento de datos
+
+numero1 db 0
+numero2 db 0
+suma db 0
+resta db 0
+
+mensaje1 db 10, 13, "Ingresa el primer numero (0-9): $"
+mensaje2 db 10, 13, "Ingresa el segundo numero (0-9): $"
+mensaje3 db 10, 13, "La suma es: $"
+mensaje4 db 10, 13, "La resta es: $"
+saltoLinea db 10, 13, "$"
+
+.code  ; Segmento de codigo
+main proc
+    ; Inicializar segmento de datos
+    mov ax, @data
+    mov ds, ax
+
+suma_resta numero1,numero2
+   
+    ; Finalizar el programa
+    mov ax, 4c00h
+    int 21h
+main endp
+end main
