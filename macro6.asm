@@ -50,3 +50,27 @@ int 21h
 
     int 21h
 endm
+
+.model small
+.stack
+.data
+
+mensaje1 db 10,13,7,"Resultado de la pila:  ","$"
+espacio db 10,13,7,"   ","$"
+.code
+main proc
+
+
+mov ax, SEG @data
+mov ds,ax
+
+imprimir espacio
+imprimir espacio
+imprime_caracter "a"
+
+
+
+mov ax,4c00h;salir del programa
+int 21h
+main endp;termina procedimiento
+end main
