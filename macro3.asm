@@ -8,23 +8,20 @@ endm
 .stack
 .data
 
-frase db 10,13,7, "Buen dia   ","$"
-
+    frase db 10,13,7, "Buen dia   ","$"
 
 .code
 main proc 
 
-mov ax, SEG @data
-mov ds,ax
+    mov ax, SEG @data
+    mov ds,ax
 
+    imprimir frase
+    imprimir frase
 
-imprimir frase
-imprimir frase
-
-mov ah,4ch
-int 21h
+    mov ah,4ch
+    int 21h
 
 .exit
 main endp
-
 end main
