@@ -3,9 +3,9 @@
 
 .data   ;inicio de datos
 
-mensaje db "Tecnologico de Estudios Superiores de Jilotepec","$"    ;mensaje
-mensaje2 db 10,13,4,"Ingenieria en sistemas computacionales","$"
-mensaje3 db "                                              ","$"
+    mensaje db "Tecnologico de Estudios Superiores de Jilotepec","$"    ;mensaje
+    mensaje2 db 10,13,4,"Ingenieria en sistemas computacionales","$"
+    mensaje3 db "                                              ","$"
 
 .code   ;inicio de codigo
 
@@ -24,5 +24,4 @@ main proc   ;inicia proceso principal
     mov ax,4c00h    ;salir del programa
     int 21h
 main endp  ;termina procedimiento
-
 end main
