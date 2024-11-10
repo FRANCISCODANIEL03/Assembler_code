@@ -2,17 +2,17 @@
 .stack 64
 
 .data  ; Secci?n de datos
-numero1 db 0
-numero2 db 0
-mult db 0
-divi db 0
-modu db 0
+    numero1 db 0
+    numero2 db 0
+    mult db 0
+    divi db 0
+    modu db 0
 
-mensaje1 db 10, 13, "Ingresa el primer numero (0-99): $"
-mensaje2 db 10, 13, "Ingresa el segundo numero (0-99): $"
-mensaje3 db 10, 13, "La multiplicacion es: $"
-mensaje4 db 10, 13, "La division es: $"
-mensaje5 db 10, 13, "El modulo es: $"
+    mensaje1 db 10, 13, "Ingresa el primer numero (0-99): $"
+    mensaje2 db 10, 13, "Ingresa el segundo numero (0-99): $"
+    mensaje3 db 10, 13, "La multiplicacion es: $"
+    mensaje4 db 10, 13, "La division es: $"
+    mensaje5 db 10, 13, "El modulo es: $"
 
 .code  ; Secci?n de c?digo
 begin proc far
@@ -97,7 +97,6 @@ div_error: ; Manejo de error de divisi?n
     mov dl, 'r'
     int 21h
     ret
-
 begin endp
 
 ; Funci?n para leer un n?mero de hasta dos d?gitos
@@ -161,5 +160,4 @@ print_loop:
     pop ax            ; Recuperar AX
     ret
 print_number endp
-
 end begin
