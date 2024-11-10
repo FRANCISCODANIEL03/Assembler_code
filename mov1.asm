@@ -3,7 +3,7 @@
 
 .data   ;inicio de datos
 
-mensaje db "Tecnologico de Estudios Superiores de Jilotepec","$"    ;mensaje
+    mensaje db "Tecnologico de Estudios Superiores de Jilotepec","$"    ;mensaje
 
 .code   ;inicio de codigo
 
@@ -16,5 +16,4 @@ main proc   ;inicia proceso principal
     mov ax,4c00h    ;salir del programa
     int 21h
 main endp  ;termina procedimiento
-
 end main
