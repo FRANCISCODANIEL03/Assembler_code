@@ -39,7 +39,6 @@ ciclo:
     jmp ciclo
 
 ciclo1:
-    
     mov dl, msg[SI]
     cmp DL, 0
     je fuera_ciclo
@@ -58,5 +57,4 @@ ciclo1:
 fuera_ciclo:
     mov ax, 4c00h
     int 21h
-    
 end inicio
