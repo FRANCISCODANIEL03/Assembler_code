@@ -36,8 +36,6 @@ ciclo:
     inc SI
     jmp ciclo
 fuera_ciclo:
-  
     mov ax,4c00h
     int 21h
-  
- end  inicio
+end  inicio
