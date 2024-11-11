@@ -2,6 +2,7 @@
 .stack 100h
 
 .data
+
     msg1 db 10,13,"Ingrese el primer numero (0-99): $"
     msg2 db 10,13,"Ingrese el segundo numero (0-99): $"
     sum_msg db 10,13,"La suma es: $"
@@ -118,5 +119,4 @@ print_loop:
     loop print_loop   ; Repetir para todos los d?gitos
     ret
 print_number endp
-
 end main
