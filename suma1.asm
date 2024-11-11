@@ -2,13 +2,13 @@
 .stack 100h
 .data
 
-num1 dw 0
-num2 dw 0
-num3 dw 0
+    num1 dw 0
+    num2 dw 0
+    num3 dw 0
 
-mensaje db 10,13,6, " Primer numero: ","$"
-mensaje2 db 10,13,6, " Segundo numero: ","$" 
-mensaje3 db 10,13,6, " La suma es: ","$"
+    mensaje db 10,13,6, " Primer numero: ","$"
+    mensaje2 db 10,13,6, " Segundo numero: ","$" 
+    mensaje3 db 10,13,6, " La suma es: ","$"
 
 .code 
 main proc 
@@ -54,8 +54,6 @@ main proc
 
     mov ax,4c00h
     int 21h
-
 main endp
-
 end main
 
