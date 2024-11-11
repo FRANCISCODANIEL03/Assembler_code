@@ -3,16 +3,16 @@
 
 .data  ; Segmento de datos
 
-numero1 db 0
-numero2 db 0
-suma db 0
-resta db 0
+    numero1 db 0
+    numero2 db 0
+    suma db 0
+    resta db 0
 
-mensaje1 db 10, 13, "Ingresa el primer numero (0-9): $"
-mensaje2 db 10, 13, "Ingresa el segundo numero (0-9): $"
-mensaje3 db 10, 13, "La suma es: $"
-mensaje4 db 10, 13, "La resta es: $"
-saltoLinea db 10, 13, "$"
+    mensaje1 db 10, 13, "Ingresa el primer numero (0-9): $"
+    mensaje2 db 10, 13, "Ingresa el segundo numero (0-9): $"
+    mensaje3 db 10, 13, "La suma es: $"
+    mensaje4 db 10, 13, "La resta es: $"
+    saltoLinea db 10, 13, "$"
 
 .code  ; Segmento de c?digo
 main proc
