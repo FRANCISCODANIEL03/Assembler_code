@@ -2,13 +2,13 @@
 .stack 
 .data
 
-num1 dw 0       ; Para almacenar el primer n?mero de dos d?gitos
-num2 dw 0       ; Para almacenar el segundo n?mero de dos d?gitos
-resultado dw 0  ; Para almacenar el resultado de la suma
+    num1 dw 0       ; Para almacenar el primer n?mero de dos d?gitos
+    num2 dw 0       ; Para almacenar el segundo n?mero de dos d?gitos
+    resultado dw 0  ; Para almacenar el resultado de la suma
 
-mensaje db 10,13,6, "Primer numero (2 digitos): ","$"
-mensaje2 db 10,13,6, "Segundo numero (2 digitos): ","$" 
-mensaje3 db 10,13,6, "La suma es: ","$"
+    mensaje db 10,13,6, "Primer numero (2 digitos): ","$"
+    mensaje2 db 10,13,6, "Segundo numero (2 digitos): ","$" 
+    mensaje3 db 10,13,6, "La suma es: ","$"
 
 .code 
 main proc
@@ -100,6 +100,5 @@ main proc
     ; Terminar el programa
     mov ax, 4c00h
     int 21h
-
 main endp
 end main
