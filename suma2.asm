@@ -2,13 +2,13 @@
 .stack 100h
 .data
 
-num1 dw 0       ; Almacenar el primer n?mero
-num2 dw 0       ; Almacenar el segundo n?mero
-resultado dw 0  ; Almacenar el resultado de la suma
+    num1 dw 0       ; Almacenar el primer n?mero
+    num2 dw 0       ; Almacenar el segundo n?mero
+    resultado dw 0  ; Almacenar el resultado de la suma
 
-mensaje db 10,13, "Ingrese el primer numero (2 digitos): $"
-mensaje2 db 10,13, "Ingrese el segundo numero (2 digitos): $"
-mensaje3 db 10,13, "La suma es: $"
+    mensaje db 10,13, "Ingrese el primer numero (2 digitos): $"
+    mensaje2 db 10,13, "Ingrese el segundo numero (2 digitos): $"
+    mensaje3 db 10,13, "La suma es: $"
 
 .code
 main proc
@@ -96,6 +96,5 @@ main proc
     ; Finalizar el programa
     mov ax, 4c00h
     int 21h
-
 main endp
 end main
