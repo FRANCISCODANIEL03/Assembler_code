@@ -1,11 +1,13 @@
 .model small
 .stack 100h
 .data
+
     sum dw 0       ; Variable para almacenar la suma
     i dw 1         ; Contador de la suma, comenzando en 1
     temp dw 0      ; Variable temporal para calcular i + 1
     mensaje db 'La suma es: $'
     resultado db 5 dup('$')  ; Para almacenar el resultado en formato ASCII
+    
 .code
 start:
     mov ax, @data
