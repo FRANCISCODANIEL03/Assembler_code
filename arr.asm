@@ -36,3 +36,7 @@ mov ah,02
 add cl,30h
 mov dl,cl
 int 21h
+.exit
+main endp
+
+end main
