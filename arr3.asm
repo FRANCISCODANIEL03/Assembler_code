@@ -18,3 +18,8 @@ main proc
       
 mov ax,4c00h
 int 21h
+
+.exit
+main endp
+
+end main
