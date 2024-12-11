@@ -1,2 +1,5 @@
 .MODEL SMALL
    .STACK 64;16
+.DATA
+    ARRAY DB 10,20,3,4,5,6,7,8,9,0
+    .CODE    
