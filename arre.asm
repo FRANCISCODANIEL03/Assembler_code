@@ -45,3 +45,5 @@ main proc
     mov ah,4ch
     mov al,00h
     int 21h
+main endp
+end main
